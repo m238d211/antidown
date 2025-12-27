@@ -4,6 +4,7 @@ import { useState } from 'react';
 import GooeyNav from './component/GooeyNav';
 import TextType from './component/Text.jsx';
 import Countup from './component/countup.jsx';
+import MemberCarousel from './component/MemberCarousel';
 
 
 
@@ -73,7 +74,7 @@ function App() {
                   pauseDuration={1500}
                   showCursor={true}
                   cursorCharacter="|"
-                  className="py-10 text-7xl text-white font-bold"
+                  className="py-10 text-6xl text-white font-bold"
                 />
                 <button className=" mt-10 bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-4xl w-40 cursor-pointer"
                   onClick={() => {
@@ -105,44 +106,44 @@ function App() {
 
         {active === 'About' && (
           <div className=" w-full  flex    h-full  " id="About">
-            
+
             <div className="flex justify-around items-center flex-col h-auto w-full text-white text-2xl font-medium">
-           <div className="w-auto h-auto flex justify-center hover:scale-105 transition-transform duration-300 ">
-              <span className="text-white font-bold text-4xl  "> About AntiDown.sq </span>
-              
-              
+              <div className="w-auto h-auto flex justify-center hover:scale-105 transition-transform duration-300 ">
+                <span className="text-white font-bold text-4xl  "> About AntiDown.sq </span>
+
+
+              </div>
+
+              <div className="grid md:grid-cols-3  grid-cols-1 gap-6  md:mx-20 mx-10 mt:10 mt-20 mb-20 md:mb-60 ">
+
+                {/* Project Card 1 */}
+                <div className="bg-gray-800 rounded-lg p-20  md:m-5 md:h-125  shadow-blue-800  justify-center items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-white text-4xl" ><Countup from={2020} to={2025} duration={2} separator="" /></span>
+                  <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Created In  </h3>
+
+                </div>
+                {/* Project Card 2 */}
+                <div className="bg-gray-800 rounded-lg p-20   md:m-5 shadow-violet-950 justify-center  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-white text-4xl" >+<Countup from={0} to={8} duration={2} separator="," /></span>
+                  <h3 className="md:text-2xl text-md text-white font-semibold mb-4"> Members </h3>
+
+                </div>
+                {/* Project Card 3 */}
+                <div className="bg-gray-800 rounded-lg p-20   md:m-5 shadow-blue-400 justify-center  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-white text-4xl" >+<Countup from={0} to={4} duration={2} separator="," /></span>
+                  <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Active Member</h3>
+
+                </div>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-3  grid-cols-1 gap-6  md:mx-20 mx-10 mt:10 mt-20 mb-20 md:mb-60 ">
-
-              {/* Project Card 1 */}
-              <div className="bg-gray-800 rounded-lg p-20  md:m-5 md:h-125  shadow-blue-800  justify-center items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" ><Countup from={2020} to={2025} duration={2} separator="" /></span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Created In  </h3>
-           
-              </div>
-              {/* Project Card 2 */}
-            <div className="bg-gray-800 rounded-lg p-20   md:m-5 shadow-violet-950 justify-center  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" >+<Countup from={0} to={8} duration={2} separator="," /></span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4"> Memmbers </h3>
-           
-              </div>
-              {/* Project Card 3 */}
-           <div className="bg-gray-800 rounded-lg p-20   md:m-5 shadow-blue-400 justify-center  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" >+<Countup from={0} to={4} duration={2} separator="," /></span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Active Memmber</h3>
-           
-              </div>
-            </div>
-            </div>
-            
           </div>
         )}
 
         {/* contact */}
         {active === 'contact' && (
           <div className=" mx-auto w-[90%] md:w-[60%] mt-30 h-[700px] rounded bg-gray-800 " id="contact">
-     
+
             <div className="flex justify-center h-auto w-full text-white text-2xl font-medium">
               <label className="">
                 this is contact page
@@ -153,49 +154,50 @@ function App() {
 
 
       </motion.div>
-{/* projects */}
+      {/* projects */}
       <div className="flex   w-full h-auto md:gap-0 gap-10 pb-60  relative  bg-gray-900  ">
 
 
         <div className="w-full h-full flex justify-around flex-col items-center ">
 
           <div className=" ">
-
-            <span className="text-white text-7xl font-medium mt-10">
-              Projects 
-            </span>
+       <TextType
+                  text={["Projects"]}
+                  typingSpeed={100}
+                  pauseDuration={2000}
+                  deletingSpeed={100}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  className="text-white text-6xl font-medium mt-10"
+                />
+         
 
           </div>
 
-          
 
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-6  md:mx-20 mx-10 mt:10 mt-20 mb-10 ">
 
-              {/* Project Card 1 */}
-              <div className="bg-gray-800 rounded-lg p-20 md:m-5  shadow-blue-800 justify-around  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" >+<Countup from={0} to={15} duration={2} separator="," /></span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Projects Completed  </h3>
-           
-              </div>
-              {/* Project Card 2 */}
-            <div className="bg-gray-800 rounded-lg p-20  md:m-5 shadow-violet-950 justify-between  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" ><Countup from={0} to={50} duration={2} separator="," />%</span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4"> TeamDevlopment  </h3>
-           
-              </div>
-              {/* Project Card 3 */}
-           <div className="bg-gray-800 rounded-lg p-20 md:m-5 shadow-blue-400 justify-around  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
-               <span className="text-white text-4xl" >+<Countup from={0} to={0} duration={2} separator="," /></span> 
-                <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Customers  </h3>
-           
-              </div>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-6  md:mx-20 mx-10 mt:10 mt-20 mb-10 ">
+
+            {/* Project Card 1 */}
+            <div className="bg-gray-800 rounded-lg p-20 md:m-5  shadow-blue-800 justify-around  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+              <span className="text-white text-4xl" >+<Countup from={0} to={15} duration={2} separator="," /></span>
+              <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Projects Completed  </h3>
+
             </div>
+            {/* Project Card 2 */}
+            <div className="bg-gray-800 rounded-lg p-20  md:m-5 shadow-violet-950 justify-between  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+              <span className="text-white text-4xl" ><Countup from={0} to={50} duration={2} separator="," />%</span>
+              <h3 className="md:text-2xl text-md text-white font-semibold mb-4"> TeamDevlopment  </h3>
 
+            </div>
+            {/* Project Card 3 */}
+            <div className="bg-gray-800 rounded-lg p-20 md:m-5 shadow-blue-400 justify-around  items-center flex flex-col hover:shadow-xl transition-shadow duration-300">
+              <span className="text-white text-4xl" >+<Countup from={0} to={0} duration={2} separator="," /></span>
+              <h3 className="md:text-2xl text-md text-white font-semibold mb-4">Customers  </h3>
 
+            </div>
+          </div>
 
-
-
-       
 
 
         </div>
@@ -203,6 +205,47 @@ function App() {
 
 
       </div>
+
+     
+      <div className="flex   w-full h-auto md:gap-0 gap-10 md:pb-40 pb-10  relative  bg-gray-900  ">
+
+
+        <div className="w-full h-full flex justify-around flex-col items-center ">
+
+          <div className=" ">
+
+       <TextType
+                  text={["Members"]}
+                  typingSpeed={100}
+                  pauseDuration={2000}
+                  deletingSpeed={100}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  className="text-white text-6xl font-medium mt-10"
+                />
+
+          </div>
+
+
+
+        <div className="w-full h-full flex justify-center items-center pt-15 ">
+
+          <MemberCarousel />
+
+        </div>
+
+  
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+
     </>
   );
 
